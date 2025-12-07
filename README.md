@@ -67,6 +67,11 @@ class Injekt {
     fun exists(
         type: KType
     ): Boolean = creators[type] != null
+
+    fun reset (){
+        creators.clear()
+        instances.clear()
+    }
 }
 
 fun injekt(block: Injekt.() -> Unit) = Injekt().apply(block)
